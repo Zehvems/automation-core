@@ -1,0 +1,30 @@
+# kompilacja i zależności
+node_modules/
+dist/
+
+# pliki robocze (wyniki działania botów)
+data/logs/*.log
+data/screens/*
+data/.trash/
+data/out/*
+!data/.gitkeep
+
+# systemowe
+.DS_Store
+Thumbs.db
+
+# pliki tymczasowe
+*.tmp
+*.bak
+
+.vscode/
+!.vscode/settings.json
+
+.vscode/
+!.vscode/settings.json
+
+data/logs/*.log
+data/out/*
+data/screens/*
+data/.trash/
+

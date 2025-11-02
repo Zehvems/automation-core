@@ -1,0 +1,6 @@
+{
+  "targets": ["data/logs", "data/screens"],
+  "keepRecent": 5,
+  "keepDays": 7,
+  "trashMaxDays": 30
+}
