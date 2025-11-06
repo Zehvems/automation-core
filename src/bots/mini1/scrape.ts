@@ -1,9 +1,8 @@
 import axios from "axios";
-import { data } from "cheerio/dist/commonjs/api/attributes";
+import * as cheerio from "cheerio";
 export async function scrape() {
   console.log("scraping...");
   const res = await axios.get("https://books.toscrape.com/");
-  console.log(Object.keys(res));
-  console.log(res.data);
+  const $ = cheerio.load(res.data);
   return [];
 }
