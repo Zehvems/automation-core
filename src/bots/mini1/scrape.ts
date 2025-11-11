@@ -1,7 +1,6 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
-import { promises as fs } from "fs";
-import * as path from "path";
+
 type Book = { title: string; price: number; url: string };
 
 export async function scrape() {
