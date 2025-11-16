@@ -9,13 +9,14 @@ export async function scrape() {
   const $ = cheerio.load(res.data);
   const books: Book[] = [];
   $(".product_pod").each((_, el) => {
-    const url = $(el).find("h3 a").attr("href") ?? "";
+    const href = $(el).find("h3 a").attr("href") ?? "";
+    const url = new URL(href, "https://books.toscrape.com/").toString();
     const title = $(el).find("h3 a").text();
     const priceText = $(el).find(".price_color").text();
     const price = parseFloat(priceText.replace("£", ""));
-    const book = { title, price, url };
+    const book: Book = { title, price, url };
     books.push(book);
-    console.log("Book", _ + 1);
   });
+
   return books;
 }
