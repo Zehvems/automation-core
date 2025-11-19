@@ -2,12 +2,13 @@ import { scrape } from "./scrape";
 import { writeJsonSafe } from "../../utils/file";
 import { log } from "../../utils/log";
 import { grabScreenshot } from "./browser";
+import { raport } from "../../services/raport";
 import path from "path";
 let safeName = 0;
 
 export async function run() {
   const data = await scrape();
-  console.log(`Data: ${data.length}`);
+  console.log(raport(data));
   const filepath = await writeJsonSafe("data/out", data);
   console.log(`Saved file to ${filepath}`);
   await log.info(`OK count=${data.length}`);

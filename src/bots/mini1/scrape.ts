@@ -1,7 +1,7 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
 
-type Book = { title: string; price: number; url: string };
+export type Book = { title: string; price: number; url: string };
 
 export async function scrape() {
   console.log("scraping...");
